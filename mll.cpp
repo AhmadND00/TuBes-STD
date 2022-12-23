@@ -20,13 +20,7 @@ adrNegara newNegara(infotypeNegara X){
 
 //
 void insertFirstNegara(listNegara &LN, adrNegara P){
-    if (first(LN) == NULL){
-        first(LN) = P;
-        next(P) = NULL;
-    } else {
-        next(P) = first(LN);
-        first(LN) = P;
-    }
+
 
 }
 

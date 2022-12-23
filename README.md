@@ -10,10 +10,23 @@ Kami akan menginplementasi Multi Linked List 1 to N untuk statistik data pemain 
 - [X] Create List Negara
 - [X] Create Element Negara
 - [ ] Insert Negara
+  - [ ] Insert First (Syafa) // Insert seperti di single linked list biasa
+  - [ ] Insert Last (Syafa) // Insert seperti di single linked list biasa
+  - [ ] Insert After (Syafa) // Insert seperti di single linked list biasa
+  - [ ] Insert Ascending
+- [ ] Delete Negara
+  - [ ] Delete First (Syafa) // Delete seperti di single linked list biasa
+  - [ ] Delete Last (Syafa) // Delete seperti di single linked list biasa
+  - [ ] Delete After (Syafa) // Delete seperti di single linked list biasa
+- [ ] Insert Pemain
   - [ ] Insert First
   - [ ] Insert Last
   - [ ] Insert After
-  - [ ] Insert Ascending
-- [ ] Print Negara
+- [ ] Delete Pemain 
+- [X] Print Negara
 - [ ] ...
-- [ ] ...
+
+## Brainstorm
+- Cari pemain berdasarkan klub
+- List descending pemain dengan gol terbanyak
+- Cari rata-rata usia pemain per negara
