@@ -43,7 +43,7 @@ void createListNegara(listNegara &LN);
 adrNegara newNegara(infotypeNegara X);
 void insertFirstNegara(listNegara &LN, adrNegara P);
 void insertLastNegara(listNegara &LN, adrNegara P);
-void insertAfterNegara(listNegara &LN, adrNegara P);
+void insertAfterNegara(listNegara &LN, adrNegara Prec, adrNegara P);
 void insertAscNegara(listNegara &LN, adrNegara P);
 void printNegara(listNegara LN);
 #endif // MLL_H_INCLUDED
