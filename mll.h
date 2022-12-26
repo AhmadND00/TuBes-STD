@@ -1,6 +1,7 @@
 #ifndef MLL_H_INCLUDED
 #define MLL_H_INCLUDED
 
+#include <iomanip>
 #include <iostream>
 using namespace std;
 
@@ -20,8 +21,8 @@ struct negara{
 };
 
 struct pemain{
-    string namaPemain, klub;
-    int no, umur;
+    string namaPemain, klub, posisi;
+    int no, umur, totGoal;
 };
 
 struct elmNegara{
@@ -45,5 +46,9 @@ void insertFirstNegara(listNegara &LN, adrNegara P);
 void insertLastNegara(listNegara &LN, adrNegara P);
 void insertAfterNegara(listNegara &LN, adrNegara Prec, adrNegara P);
 void insertAscNegara(listNegara &LN, adrNegara P);
+adrPemain newPemain(infotypePemain X);
+void insertPemain(listNegara &LN, adrPemain P, string namaNegara);
+adrNegara findNegara(listNegara LN, string namaNegara);
 void printNegara(listNegara LN);
+void printListPemain(listNegara LN);
 #endif // MLL_H_INCLUDED
