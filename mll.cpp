@@ -74,6 +74,34 @@ adrNegara findNegara(listNegara LN, string namaNegara){
 
 }
 
+adrPemain newPemain(infotypePemain X){
+    adrPemain Q = new elmPemain;
+    info(Q).no = X.no;
+    info(Q).posisi = X.posisi;
+    info(Q).namaPemain = X.namaPemain;
+    info(Q).umur = X.umur;
+    info(Q).klub = X.klub;
+    info(Q).totGoal = X.totGoal;
+    return Q;
+
+}
+
+void insertPemain(listNegara &LN, adrPemain P, string namaNegara){
+    adrNegara Q = findNegara(LN, namaNegara);
+    if (Q == NULL){
+        cout << "Negara yang dicari tidak ada!";
+    } else {
+        if (nextChild(Q) == NULL){
+            nextChild(Q) = P;
+        } else {
+            adrPemain R = nextChild(Q);
+            next(P) = R;
+            P = R;
+        }
+    }
+}
+
+
 //
 float avrAge(listNegara LN, string namaNegara){
     int totAge = 0;
@@ -102,8 +130,33 @@ void printNegara(listNegara LN){
     cout<<"========================== List Negara ==========================\nPosisi \t Negara \t Konfiderasi \t Total Menang Piala Dunia"<<endl;
     adrNegara P = first(LN);
     while (P != NULL){
-        cout<<info(P).finish<<"\t "<<info(P).namaNegara<<"\t "<<info(P).konfiderasi<<"\t "<<info(P).totJuara<<endl;
+        cout<<setw(9)<<left<<info(P).finish<<setw(16)<<info(P).namaNegara<<setw(27)<<info(P).konfiderasi<<info(P).totJuara<<endl;
         P = next(P);
     }
+    cout<<endl;
     
+}
+
+void printListPemain(listNegara LN){
+    adrNegara P = first(LN);
+    if (P == NULL){
+        cout<<"List Kosong!"<<endl;
+    } else {
+        cout<<"========================== List Pemain =========================="<<endl;
+        while (P != NULL){
+            cout<<info(P).namaNegara<<endl;
+            if (nextChild(P) == NULL){
+                cout << "Tidak ada pemain."<<endl;
+            } else {
+                cout<<"No\tPosisi\tNama Pemain\tUmur\tKlub\tGoal"<<endl;
+                adrPemain Q = nextChild(P);
+                while (Q != NULL){
+                    cout<<info(Q).no<<"\t"<<info(Q).posisi<<"\t"<<info(Q).namaPemain<<"\t"<<info(Q).umur<<"\t"<<info(Q).klub<<"\t"<<info(Q).totGoal<<endl;
+                    Q = next(Q);
+                }
+            }
+            P = next(P);
+            cout<<endl;
+        }
+    }
 }
