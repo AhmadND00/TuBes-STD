@@ -1,4 +1,26 @@
+/* Nama Negara, Konfiderasi, Finish, Total Juara */
+
 Argentina
 CONMEBOL
 1
 3
+Perancis
+UEFA 
+2
+3
+Kroasia
+UEFA 
+3
+0
+Maroco
+CONCACAF 
+4
+0
+
+/* No, Posisi, Nama Pemain, Usia, Gol, Klub, Liga */
+10
+FWD
+Lionel Messi
+35
+7
+PSG
