@@ -1,4 +1,4 @@
-# Tugas Besar - Struktur Data - Kelompok 22
+# Tugas Besar - Struktur Data - Kelompok 21
 Project ini dilaksanakan untuk memenuhi pengerjaan tugas besar mata kuliah struktur data.
 
 ## Tentang Project
@@ -10,7 +10,7 @@ Kami akan menginplementasi Multi Linked List 1 to N untuk statistik data pemain 
 - [X] Create List Negara
 - [X] Create Element Negara
 - [ ] Insert Negara
-  - [ ] Insert First (Syafa) // Insert seperti di single linked list biasa
+  - [x] Insert First (Syafa) // Insert seperti di single linked list biasa
   - [ ] Insert Last (Syafa) // Insert seperti di single linked list biasa
   - [ ] Insert After (Syafa) // Insert seperti di single linked list biasa
   - [ ] Insert Ascending
@@ -24,7 +24,7 @@ Kami akan menginplementasi Multi Linked List 1 to N untuk statistik data pemain 
   - [ ] Insert After
 - [ ] Delete Pemain 
 - [X] Print Negara
-- [ ] ...
+- [X] Print Pemain
 
 ## Brainstorm
 - Cari pemain berdasarkan klub
