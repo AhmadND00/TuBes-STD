@@ -89,7 +89,7 @@ adrPemain newPemain(infotypePemain X){
 void insertPemain(listNegara &LN, adrPemain P, string namaNegara){
     adrNegara Q = findNegara(LN, namaNegara);
     if (Q == NULL){
-        cout << "Negara yang dicari tidak ada!";
+        cout << "Negara yang dicari tidak ada!"<<endl<<endl;
     } else {
         if (nextChild(Q) == NULL){
             nextChild(Q) = P;
@@ -109,7 +109,7 @@ float avrAge(listNegara LN, string namaNegara){
 
     adrNegara P = findNegara(LN, namaNegara);
     if (P == NULL){
-        cout << "Negara yang dicari tidak ada dalam list";
+        cout << "Negara yang dicari tidak ada dalam list"<<endl<<endl;
     } else {
         if (nextChild(P) != NULL){
             adrPemain Q = nextChild(P);
@@ -127,21 +127,24 @@ float avrAge(listNegara LN, string namaNegara){
 
 // 
 void printNegara(listNegara LN){
-    cout<<"========================== List Negara ==========================\nPosisi \t Negara \t Konfiderasi \t Total Menang Piala Dunia"<<endl;
-    adrNegara P = first(LN);
-    while (P != NULL){
-        cout<<setw(9)<<left<<info(P).finish<<setw(16)<<info(P).namaNegara<<setw(27)<<info(P).konfiderasi<<info(P).totJuara<<endl;
-        P = next(P);
+    if (first(LN) == NULL){
+        cout<<"List Negara Kosong!"<<endl<<endl;
+    } else {
+        cout<<"========================== List Negara ==========================\nPosisi \t Negara \t Konfiderasi \t Total Menang Piala Dunia"<<endl;
+        adrNegara P = first(LN);
+        while (P != NULL){
+            cout<<setw(9)<<left<<info(P).finish<<setw(16)<<info(P).namaNegara<<setw(27)<<info(P).konfiderasi<<info(P).totJuara<<endl;
+            P = next(P);
+        }
+    cout<<endl<<endl;
     }
-    cout<<endl;
-    
 }
 
 void printListPemain(listNegara LN){
-    adrNegara P = first(LN);
-    if (P == NULL){
-        cout<<"List Kosong!"<<endl;
+    if (first(LN) == NULL){
+        cout<<"List Pemain Kosong!"<<endl<<endl;
     } else {
+        adrNegara P = first(LN);
         cout<<"========================== List Pemain =========================="<<endl;
         while (P != NULL){
             cout<<info(P).namaNegara<<endl;
@@ -156,7 +159,33 @@ void printListPemain(listNegara LN){
                 }
             }
             P = next(P);
-            cout<<endl;
+            cout<<endl<<endl;
         }
     }
+}
+
+void mainMenu(){
+    cout<<"=================== MAIN MENU ==================="<<endl;
+    cout<<"1. Insert Data"<<endl;
+    cout<<"2. Show List"<<endl;
+    cout<<"3. Find..."<<endl;
+    cout<<"4. Delete..."<<endl;
+    cout<<"0. Exit Menu"<<endl;
+    cout<<"================================================="<<endl;
+}
+
+void menuInsert(){
+    cout<<"================== INSERT MENU =================="<<endl;
+    cout<<"1. Insert Negara"<<endl;
+    cout<<"2. Insert Pemain"<<endl;
+    cout<<"0. Return to Main Menu"<<endl;
+    cout<<"================================================="<<endl;
+}
+
+void menuShow(){
+    cout<<"=================== SHOW MENU ==================="<<endl;
+    cout<<"1. Show Negara"<<endl;
+    cout<<"2. Show Info Pemain"<<endl;
+    cout<<"0. Return to Main Menu"<<endl;
+    cout<<"================================================="<<endl;
 }

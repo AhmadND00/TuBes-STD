@@ -24,3 +24,92 @@ Lionel Messi
 35
 7
 PSG
+/* Nama Negara, Konfiderasi, Finish, Total Juara */
+
+Argentina
+CONMEBOL
+1
+3
+Perancis
+UEFA 
+2
+3
+Kroasia
+UEFA 
+3
+0
+Maroco
+CONCACAF 
+4
+0
+
+/* No, Posisi, Nama Pemain, Usia, Gol, Klub, Liga */
+23
+GK
+Emiliano Martinez
+Aston Villa
+30
+0
+26
+DEF
+Nahuel Molina
+Atletico Madrid
+24
+1
+13
+DEF
+Cristian Romero
+Tottenham
+24
+0
+19
+DEF
+Nicolas Otamendi
+Benfica
+34
+0
+3
+DEF
+Nicolas Tagliafico
+Lyon
+30
+0
+7
+MID
+Rodrigo De Paul
+Atletico Madrid
+28
+0
+24
+MID
+Enzo Fernandez
+Benfica
+21
+1
+20
+MID
+Alexis Mac Allister
+Brighton
+23
+1
+11
+FWD
+Angel Di Maria
+Juventus
+34
+1
+10
+FWD
+Lionel Messi
+PSG
+35
+7
+9
+FWD
+Julian Alvarez
+Man City
+22
+4
+
+
+
