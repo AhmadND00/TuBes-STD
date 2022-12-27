@@ -148,10 +148,10 @@ void printListPemain(listNegara LN){
             if (nextChild(P) == NULL){
                 cout << "Tidak ada pemain."<<endl;
             } else {
-                cout<<"No\tPosisi\tNama Pemain\tUmur\tKlub\tGoal"<<endl;
+                cout<<"No\tPosisi\tNama Pemain\tKlub\tUmur\tGoal"<<endl;
                 adrPemain Q = nextChild(P);
                 while (Q != NULL){
-                    cout<<info(Q).no<<"\t"<<info(Q).posisi<<"\t"<<info(Q).namaPemain<<"\t"<<info(Q).umur<<"\t"<<info(Q).klub<<"\t"<<info(Q).totGoal<<endl;
+                    cout<<info(Q).no<<"\t"<<info(Q).posisi<<"\t"<<info(Q).namaPemain<<"\t"<<info(Q).klub<<"\t"<<info(Q).umur<<"\t"<<info(Q).totGoal<<endl;
                     Q = next(Q);
                 }
             }
