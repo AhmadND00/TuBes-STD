@@ -1,0 +1,134 @@
+Argentina
+23
+GK
+Emiliano Martinez
+Aston Villa
+30
+0
+26
+DEF
+Nahuel Molina
+Atletico Madrid
+24
+1
+13
+DEF
+Cristian Romero
+Tottenham
+24
+0
+19
+DEF
+Nicolas Otamendi
+Benfica
+34
+0
+3
+DEF
+Nicolas Tagliafico
+Lyon
+30
+0
+7
+MID
+Rodrigo De Paul
+Atletico Madrid
+28
+0
+24
+MID
+Enzo Fernandez
+Benfica
+21
+1
+20
+MID
+Alexis Mac Allister
+Brighton
+23
+1
+11
+FWD
+Angel Di Maria
+Juventus
+34
+1
+10
+FWD
+Lionel Messi
+PSG
+35
+7
+9
+FWD
+Julian Alvarez
+Man City
+22
+4
+France
+4
+DEF
+Raphael Varane
+Manchester United
+29
+0
+5
+DEF
+Jules Kounde
+Barcelona
+23
+0
+1
+GK
+Hugo Lloris
+Tottenham
+35
+0
+7
+FWD
+Antoine Griezmann
+Atletico Madrid
+31
+0
+8
+MID
+Aurelien Tchouameni
+Real Madrid
+22
+1
+9
+FWD
+Olivier Giroud
+AC Milan
+36
+4
+10
+FWD
+Kylian Mbappe
+PSG
+23
+8
+11
+FWD
+Ousmane Dembele
+Barcelona
+25
+0
+14
+MID
+Adrien Rabiot
+Juventus
+27
+1
+18
+DEF
+Dayot Upamecano
+Bayern Munich
+23
+0
+22
+DEF
+Theo Hernandez
+AC Milan
+25
+1

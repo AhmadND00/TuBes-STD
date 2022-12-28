@@ -93,10 +93,16 @@ void insertPemain(listNegara &LN, adrPemain P, string namaNegara){
     } else {
         if (nextChild(Q) == NULL){
             nextChild(Q) = P;
+        } else if ((info(P).posisi == "GK") && (nextChild(Q) != NULL)) { //Insert First if Goal Keeper
+            adrPemain R = nextChild(Q);
+            nextChild(Q) = P;
+            next(P) = R;
         } else {
             adrPemain R = nextChild(Q);
-            next(P) = R;
-            P = R;
+            while (next(R) != NULL){
+                R = next(R);
+            }
+            next(R) = P;
         }
     }
 }
@@ -119,13 +125,13 @@ float avrAge(listNegara LN, string namaNegara){
                 Q = next(Q);
             }
         }
-    
+
     }
 
     return (float(totAge) / float(N));
 }
 
-// 
+//
 void printNegara(listNegara LN){
     if (first(LN) == NULL){
         cout<<"List Negara Kosong!"<<endl<<endl;
@@ -151,21 +157,60 @@ void printListPemain(listNegara LN){
             if (nextChild(P) == NULL){
                 cout << "Tidak ada pemain."<<endl;
             } else {
-                cout<<"No\tPosisi\tNama Pemain\tKlub\tUmur\tGoal"<<endl;
+                cout<<"No\tPosisi\tNama Pemain\t\tKlub\t\t Umur\tGoal"<<endl;
                 adrPemain Q = nextChild(P);
                 while (Q != NULL){
-                    cout<<info(Q).no<<"\t"<<info(Q).posisi<<"\t"<<info(Q).namaPemain<<"\t"<<info(Q).klub<<"\t"<<info(Q).umur<<"\t"<<info(Q).totGoal<<endl;
+                    cout<<setw(8)<<left<<info(Q).no<<setw(8)<<info(Q).posisi<<setw(24)<<info(Q).namaPemain<<setw(17)<<info(Q).klub<<setw(8)<<info(Q).umur<<setw(8)<<info(Q).totGoal<<endl;
                     Q = next(Q);
                 }
             }
             P = next(P);
-            cout<<endl<<endl;
+            cout<<endl;
         }
     }
 }
 
+
+void inputPemain(listNegara &LN, adrPemain Q, infotypePemain xP, int N){
+    string negara;
+    cout<<"Negara dari Pemain adalah? ";
+    cin>>negara;
+    while (negara != "0"){
+        if (findNegara(LN, negara) == NULL){
+            cout<<"Negara tidak terdapat dalam list."<<endl<<endl;
+        } else {
+            for (int i = 1; i <= N; i++){
+                cout<<"Input No Pemain: ";
+                cin>>xP.no;
+                cout<<"Input Posisi Pemain: ";
+                cin>>xP.posisi;
+                cin.ignore();
+                cout<<"Input Nama Pemain: ";
+                getline(cin, xP.namaPemain);
+                cout<<"Input Klub Pemain: ";
+                getline(cin, xP.klub);
+                cout<<"Input Umur Pemain: ";
+                cin>>xP.umur;
+                cout<<"Input Gol Pemain: ";
+                cin>>xP.totGoal;
+                Q = newPemain(xP);
+                insertPemain(LN, Q, negara);
+            }
+            cout<<"Input pemain berhasil!"<<endl<<endl;
+        }
+
+        cout<<"Negara dari Pemain adalah? ";
+        cin>>negara;
+
+    }
+
+
+
+}
+
+
 void mainMenu(){
-    cout<<"=================== MAIN MENU ==================="<<endl;
+    cout<<"\n=================== MAIN MENU ==================="<<endl;
     cout<<"1. Insert Data"<<endl;
     cout<<"2. Show List"<<endl;
     cout<<"3. Find..."<<endl;
@@ -175,7 +220,7 @@ void mainMenu(){
 }
 
 void menuInsert(){
-    cout<<"================== INSERT MENU =================="<<endl;
+    cout<<"\n================== INSERT MENU =================="<<endl;
     cout<<"1. Insert Negara"<<endl;
     cout<<"2. Insert Pemain"<<endl;
     cout<<"0. Return to Main Menu"<<endl;
@@ -183,7 +228,7 @@ void menuInsert(){
 }
 
 void menuShow(){
-    cout<<"=================== SHOW MENU ==================="<<endl;
+    cout<<"\n=================== SHOW MENU ==================="<<endl;
     cout<<"1. Show Negara"<<endl;
     cout<<"2. Show Info Pemain"<<endl;
     cout<<"0. Return to Main Menu"<<endl;

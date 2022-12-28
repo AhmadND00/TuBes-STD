@@ -51,6 +51,7 @@ void insertPemain(listNegara &LN, adrPemain P, string namaNegara);
 adrNegara findNegara(listNegara LN, string namaNegara);
 void printNegara(listNegara LN);
 void printListPemain(listNegara LN);
+void inputPemain(listNegara &LN, adrPemain Q, infotypePemain xP, int N);
 void mainMenu();
 void menuInsert();
 void menuShow();
