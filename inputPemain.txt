@@ -132,3 +132,138 @@ Theo Hernandez
 AC Milan
 25
 1
+Croatia
+2
+DEF
+Josip Stanisic
+Bayern Munich
+22
+0
+4
+FWD
+Ivan Perisic
+Tottenham Hotspur
+33
+1
+7
+MID
+Lovro Majer
+Rennes
+24
+1
+16
+FWD
+Bruno Petkovic
+Dinamo Zagreb
+28
+1
+9
+FWD
+Andrej Kramaric
+Hoffenheim
+31
+2
+10
+MID
+Luka Modric
+Real Madrid
+37
+0
+14
+FWD
+Marko Livaja
+Hadjuk Split
+29
+1
+18
+FWD
+Mislav Orsic
+Dinamo Zagreb
+29
+1
+20
+DEF
+Josko Gvardiol
+RB Leipzig
+20
+1
+1
+GK
+Dominik Livakovic
+Dinamo Zagreb
+27
+0
+24
+DEF
+Josip Sutalo
+Dinamo Zagreb
+22
+0
+Morocco
+19
+FWD
+Youssef En-Nesyri
+Sevilla
+25
+2
+14
+FWD
+Zaharia Aboukhlal
+Toulouse
+22
+1
+7
+FWD
+Hakim Ziyech
+Chelsea
+24
+1
+1
+GK
+Yassine Bono
+Sevilla
+31
+0
+2
+DEF
+Achraf Hakimi
+Real Madrid
+24
+0
+20
+DEF
+Achraf Dari
+Brest
+23
+1
+18
+DEF
+Jawad El-Yamiq
+Valladolid
+30
+0
+6
+DEF
+Romain Saiss
+Besiktas
+32
+1
+8
+MID
+Azzedine Ounahi
+Angers
+22
+0
+4
+MID
+Sofyan Amrabat
+Fiorentina
+26
+0
+15
+MID
+Selim Amallah
+Standard Liege
+25
+0
+0
