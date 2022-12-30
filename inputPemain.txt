@@ -5,6 +5,12 @@ Emiliano Martinez
 Aston Villa
 30
 0
+10
+FWD
+Lionel Messi
+PSG
+35
+7
 26
 DEF
 Nahuel Molina
@@ -53,12 +59,6 @@ Angel Di Maria
 Juventus
 34
 1
-10
-FWD
-Lionel Messi
-PSG
-35
-7
 9
 FWD
 Julian Alvarez
@@ -133,6 +133,12 @@ AC Milan
 25
 1
 Croatia
+20
+DEF
+Josko Gvardiol
+RB Leipzig
+20
+1
 2
 DEF
 Josip Stanisic
@@ -181,12 +187,6 @@ Mislav Orsic
 Dinamo Zagreb
 29
 1
-20
-DEF
-Josko Gvardiol
-RB Leipzig
-20
-1
 1
 GK
 Dominik Livakovic
@@ -200,6 +200,12 @@ Dinamo Zagreb
 22
 0
 Morocco
+6
+DEF
+Romain Saiss
+Besiktas
+32
+1
 19
 FWD
 Youssef En-Nesyri
@@ -242,12 +248,6 @@ Jawad El-Yamiq
 Valladolid
 30
 0
-6
-DEF
-Romain Saiss
-Besiktas
-32
-1
 8
 MID
 Azzedine Ounahi
