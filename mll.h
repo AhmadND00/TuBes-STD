@@ -53,6 +53,8 @@ void printNegara(listNegara LN);
 
 // Procedure and Function for Pemain
 adrPemain newPemain(infotypePemain X);
+void insertPemainFirst(listNegara &LN, adrPemain P, adrNegara Q, adrPemain R);
+void insertPemainLast(listNegara &LN, adrPemain P, adrNegara Q, adrPemain R);
 void insertPemain(listNegara &LN, adrPemain P, string namaNegara);
 void inputPemain(listNegara &LN, adrPemain Q, infotypePemain xP, int N);
 void printListPemain(listNegara LN);

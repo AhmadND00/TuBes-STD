@@ -12,19 +12,60 @@ adrPemain newPemain(infotypePemain X){
     return Q;
 
 }
+void insertPemainFirst(listNegara &LN, adrPemain P, adrNegara Q, adrPemain R){
+    nextChild(Q) = P;
+    next(P) = R;
+}
+
+void insertPemainLast(listNegara &LN, adrPemain P, adrNegara Q, adrPemain R){
+    while (next(R) != NULL){
+    R = next(R);
+    }
+    next(R) = P;
+}
 
 void insertPemain(listNegara &LN, adrPemain P, string namaNegara){
     adrNegara Q = findNegara(LN, namaNegara);
+    adrPemain prev;
     if (Q == NULL){
         cout << "Negara yang dicari tidak ada!"<<endl<<endl;
     } else {
+        adrPemain R = nextChild(Q);
         if (nextChild(Q) == NULL){
             nextChild(Q) = P;
-        } else { //Insert First if Goal Keeper
-            adrPemain R = nextChild(Q);
-            nextChild(Q) = P;
-            next(P) = R;
+        } else if (info(P).posisi == "GK") { //Insert first if Goal Keeper
+            insertPemainFirst(LN, P, Q, R);
+        } else if (info(P).posisi == "FWD") { //Insert last if forward
+            insertPemainLast(LN, P, Q, R);
+        } else if  (info(P).posisi == "DEF"){ //Insert after defense
+            if (info(R).posisi != "GK"){
+                insertPemainFirst(LN, P, Q, R);
+            } else if (next(R) == NULL) {
+                insertPemainLast(LN, P, Q, R);
+            } else {
+                while ((info(R).posisi == "GK") && next(R) != NULL){
+                    prev = R;
+                    R = next(R);
+                }
+                next(P) = next(prev);
+                next(prev) = P;
+            }
+
+        } else if (info(P).posisi == "MID") { //Insert after mid
+            if (info(R).posisi != "GK" && info(next(R)).posisi != "DEF"){
+                insertPemainFirst(LN, P, Q, R);
+            } else if (next(R) == NULL) {
+                insertPemainLast(LN, P, Q, R);
+            } else {
+                while ((info(R).posisi == "GK" || info(R).posisi == "DEF") && next(R) != NULL){
+                    prev = R;
+                    R = next(R);
+                }
+                next(P) = next(prev);
+                next(prev) = P;
+            }
         }
+
     }
 }
 
@@ -73,7 +114,7 @@ void printListPemain(listNegara LN){
             if (nextChild(P) == NULL){
                 cout << "Tidak ada pemain."<<endl;
             } else {
-                cout<<"No\tPosisi\tNama Pemain\t\tKlub\t\t    Umur    Goal"<<endl;
+                cout<<"No\tPosisi\tNama Pemain\t\tKlub\t\t    Umur   Goal"<<endl;
                 adrPemain Q = nextChild(P);
                 while (Q != NULL){
                     cout<<setw(8)<<left<<info(Q).no<<setw(8)<<info(Q).posisi<<setw(24)<<info(Q).namaPemain<<setw(20)<<info(Q).klub<<setw(7)<<info(Q).umur<<setw(8)<<info(Q).totGoal<<endl;
