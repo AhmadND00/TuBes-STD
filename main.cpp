@@ -8,6 +8,7 @@ int main(){
     adrNegara pNegara;
     adrPemain pPemain;
     int choice;
+    string namaNegara;
 
     //Create Empty List Negara
     createListNegara(LN);
@@ -22,33 +23,9 @@ int main(){
             cin>>choice;
             while (choice != 0){
                 if (choice == 1){
-                    xN.namaNegara = "Argentina";
-                    xN.konfiderasi = "CONMEBOL";
-                    xN.finish = 1;
-                    xN.totJuara = 3;
-                    pNegara = newNegara(xN);
-                    insertFirstNegara(LN, pNegara);
-                    xN.namaNegara = "France";
-                    xN.konfiderasi = "UEFA";
-                    xN.finish = 2;
-                    xN.totJuara = 2;
-                    pNegara = newNegara(xN);
-                    insertFirstNegara(LN, pNegara);
-                    xN.namaNegara = "Croatia";
-                    xN.konfiderasi = "UEFA";
-                    xN.finish = 3;
-                    xN.totJuara = 0;
-                    pNegara = newNegara(xN);
-                    insertFirstNegara(LN, pNegara);
-                    xN.namaNegara = "Morocco";
-                    xN.konfiderasi = "CONCACAF";
-                    xN.finish = 4;
-                    xN.totJuara = 0;
-                    pNegara = newNegara(xN);
-                    insertFirstNegara(LN, pNegara);
-                    cout<<"Negara berhasil diinputkan ke dalam list!"<<endl<<endl;
+                    inputNegara(LN, pNegara, xN);
                 } else if (choice == 2){
-                        inputPemain(LN, pPemain, xP, 11);
+                    inputPemain(LN, pPemain, xP, 11);
                 }
                 menuInsert();
                 cout<<"Pilih no: ";
@@ -64,6 +41,8 @@ int main(){
                     printNegara(LN);
                 } else if (choice == 2){
                     printListPemain(LN);
+                } else if (choice == 3){
+                    youngestOldestPlayer(LN);
                 }
                 menuShow();
                 cout<<"Pilih no: ";
@@ -71,20 +50,26 @@ int main(){
             }
             break;
         case 3:
-            cout<<"Fungsi belum dibuat";
+            cout<<"Input negara yang dicari: ";
+            cin>>namaNegara;
+            while (namaNegara != "0"){
+                avrAge(LN, namaNegara);
+                cout<<"\nInput negara yang dicari: ";
+                cin>>namaNegara;
+            }
             break;
         case 4:
-            cout<<"Fungsi belum dibuat";
+            cout<<"Fungsi belum dibuat\n";
             break;
         default:
-            cout<<"\nPastikan pilihan menu sudah sesuai dengan list"<<endl;
-            cout<<endl;
+            cout<<"Pastikan pilihan menu sudah sesuai dengan list\n";
             break;
         }
         mainMenu();
         cout << "Pilih no: ";
         cin >> choice;
     }
+    cout<<"Anda keluar dari menu."<<endl;
 
 
 

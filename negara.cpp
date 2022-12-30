@@ -113,6 +113,6 @@ void printNegara(listNegara LN){
             cout<<setw(9)<<left<<info(P).finish<<setw(16)<<info(P).namaNegara<<setw(27)<<info(P).konfiderasi<<info(P).totJuara<<endl;
             P = next(P);
         }
-    cout<<endl<<endl;
+    cout<<endl;
     }
 }

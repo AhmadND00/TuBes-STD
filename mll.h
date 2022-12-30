@@ -40,19 +40,27 @@ struct listNegara{
     adrNegara first;
 };
 
+// Procedure and Function for Negara
 void createListNegara(listNegara &LN);
 adrNegara newNegara(infotypeNegara X);
 void insertFirstNegara(listNegara &LN, adrNegara P);
 void insertLastNegara(listNegara &LN, adrNegara P);
 void insertAfterNegara(listNegara &LN, adrNegara Prec, adrNegara P);
 void insertAscNegara(listNegara &LN, adrNegara P);
-adrPemain newPemain(infotypePemain X);
-void insertPemain(listNegara &LN, adrPemain P, string namaNegara);
+void inputNegara(listNegara &LN, adrNegara P, infotypeNegara X);
 adrNegara findNegara(listNegara LN, string namaNegara);
 void printNegara(listNegara LN);
-void printListPemain(listNegara LN);
+
+// Procedure and Function for Pemain
+adrPemain newPemain(infotypePemain X);
+void insertPemain(listNegara &LN, adrPemain P, string namaNegara);
 void inputPemain(listNegara &LN, adrPemain Q, infotypePemain xP, int N);
+void printListPemain(listNegara LN);
+
+// Menu and Additional Function
 void mainMenu();
 void menuInsert();
 void menuShow();
+void youngestOldestPlayer(listNegara LN);
+void avrAge(listNegara LN, string namaNegara);
 #endif // MLL_H_INCLUDED
