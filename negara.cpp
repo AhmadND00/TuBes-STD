@@ -3,6 +3,7 @@
 // Procedure to create empty list
 void createListNegara(listNegara &LN){
     first(LN) = NULL;
+    last(LN) = NULL;
 }
 
 // Create New Element Negara
@@ -14,32 +15,65 @@ adrNegara newNegara(infotypeNegara X){
     info(P).totJuara = X.totJuara;
     nextChild(P) = NULL;
     next(P) = NULL;
+    prev(P) = NULL;
     return P;
 }
 
 
 //
 void insertFirstNegara(listNegara &LN, adrNegara P){
-    if (first(LN) == NULL){
+    if (first(LN) != NULL && last(LN) != NULL){
+        next(P) = first(LN);
+        prev(first(LN)) = P;
         first(LN) = P;
     } else {
-        next(P) = first(LN);
         first(LN) = P;
+        last(LN) = P;
     }
 
 }
 
 //
 void insertLastNegara(listNegara &LN, adrNegara P){
-
-
+    prev(P) = last(LN);
+    next(last(LN)) = P;
+    last(LN) = P;
 }
 
 //
 void insertAfterNegara(listNegara &LN, adrNegara Prec, adrNegara P){
-
+    next(P) = next(Prec);
+    prev(P) = Prec;
+    prev(next(Prec)) = P;
+    next(Prec) = P;
 
 }
+
+void deletefirst(listNegara &LN, adrNegara P){
+    P = first(LN);
+    if(first(LN) != last(LN)) {
+        first(LN) = next(P);
+        prev(first(LN)) = NULL;
+    }else{
+        first(LN) = NULL;
+        last(LN) = NULL;
+        }
+    }
+void deletelast(listNegara &LN, adrNegara P){
+    P = last(LN);
+    last(LN) = prev(last(LN));
+    prev(P) = NULL;
+    next(last(LN)) = NULL;
+}
+void deleteafter(listNegara &LN, adrNegara Prec, adrNegara P){
+    P = next(Prec);
+    next(Prec) = next(P);
+    prev(next(P)) = Prec;
+    prev(P) = NULL;
+    next(P) = NULL;
+}
+
+
 
 
 // FIXME Input negara pada list negara sesusai dengan urutan mereka di piala dunia
