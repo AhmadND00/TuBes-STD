@@ -7,8 +7,10 @@ using namespace std;
 
 #define info(P) (P)->info
 #define next(P) (P)->next
+#define prev(P) (P)->prev
 #define nextChild(P) (P)->nextChild
 #define first(LN) ((LN).first)
+#define last(LN) ((LN).last)
 
 typedef struct negara infotypeNegara;
 typedef struct pemain infotypePemain;
@@ -28,6 +30,7 @@ struct pemain{
 struct elmNegara{
     infotypeNegara info;
     adrNegara next;
+    adrNegara prev;
     adrPemain nextChild;
 };
 
@@ -38,6 +41,7 @@ struct elmPemain{
 
 struct listNegara{
     adrNegara first;
+    adrNegara last;
 };
 
 // Procedure and Function for Negara
@@ -47,6 +51,11 @@ void insertFirstNegara(listNegara &LN, adrNegara P);
 void insertLastNegara(listNegara &LN, adrNegara P);
 void insertAfterNegara(listNegara &LN, adrNegara Prec, adrNegara P);
 void insertAscNegara(listNegara &LN, adrNegara P);
+void deletefirst(listNegara &LN, adrNegara P);
+void deletelast(listNegara &LN, adrNegara P);
+void deleteafter(listNegara &LN, adrNegara P);
+
+
 void inputNegara(listNegara &LN, adrNegara P, infotypeNegara X);
 adrNegara findNegara(listNegara LN, string namaNegara);
 void printNegara(listNegara LN);
