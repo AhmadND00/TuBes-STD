@@ -3,14 +3,14 @@
 void youngestOldestPlayer(listNegara LN){
     adrPemain tempYoungest, tempOldest, youngest, oldest;
     if (first(LN) == NULL){
-        cout<<"List kosong! Mohon untuk input data terlebih dahulu!"<<endl;
+        cout<<"List is empty! Please insert the data first!"<<endl;
     } else {
         adrNegara P = first(LN);
         oldest = nextChild(P);
         youngest = nextChild(P);
         while (P != NULL){
             if (nextChild(P) == NULL){
-                cout<<"Data pemain di negara "<<info(P).namaNegara<<" kosong!"<<endl;
+                cout<<"Player data in "<<info(P).namaNegara<<" is empty!"<<endl;
             } else {
                 adrPemain Q = nextChild(P);
                 tempOldest = nextChild(P);
@@ -24,8 +24,8 @@ void youngestOldestPlayer(listNegara LN){
                     Q = next(Q);
 
                 }
-                cout<<"Pemain paling muda di "<<info(P).namaNegara<<" adalah: "<<endl<<info(tempYoungest).namaPemain<<", Umur: "<<info(tempYoungest).umur<<endl;
-                cout<<"Pemain paling tua di "<<info(P).namaNegara<<" adalah: "<<endl<<info(tempOldest).namaPemain<<", Umur: "<<info(tempOldest).umur<<endl;
+                cout<<"Youngest player in "<<info(P).namaNegara<<" is: "<<endl<<info(tempYoungest).namaPemain<<", Age: "<<info(tempYoungest).umur<<endl;
+                cout<<"Oldest playerin "<<info(P).namaNegara<<" is: "<<endl<<info(tempOldest).namaPemain<<", Age: "<<info(tempOldest).umur<<endl;
             }
             P = next(P);
             if (info(youngest).umur > info(tempYoungest).umur){
@@ -38,8 +38,8 @@ void youngestOldestPlayer(listNegara LN){
             cout<<endl;
 
         }
-        cout<<"Pemain paling muda di piala dunia 4 besar adalah: "<<endl<<info(youngest).namaPemain<<", Umur: "<<info(youngest).umur<<endl;
-        cout<<"Pemain paling tua di piala dunia 4 besar adalah: "<<endl<<info(oldest).namaPemain<<", Umur: "<<info(oldest).umur<<endl;
+        cout<<"The youngest player in top 4 world cup is: "<<endl<<info(youngest).namaPemain<<", Age: "<<info(youngest).umur<<endl;
+        cout<<"The oldest player in top 4 world cup is: "<<endl<<info(oldest).namaPemain<<", Age: "<<info(oldest).umur<<endl;
 
     }
 }
@@ -50,9 +50,9 @@ void avrAge(listNegara LN, string namaNegara){
     float average;
     adrNegara P = findNegara(LN, namaNegara);
     if (P == NULL){
-        cout << "Negara yang dicari tidak ada dalam list!"<<endl;
+        cout << "The country isn't on the list!"<<endl;
     } else if (nextChild(P) == NULL){
-        cout << "Tidak ada pemain di dalam list!"<<endl;
+        cout << "There's no player data in the country list!"<<endl;
     } else {
         if (nextChild(P) != NULL){
             adrPemain Q = nextChild(P);
@@ -63,7 +63,7 @@ void avrAge(listNegara LN, string namaNegara){
             }
         }
         average = (float(totAge) / float(N));
-        cout<<"Umur rata-rata pemain di negara "<<namaNegara<<" adalah "<<average<<" tahun "<<endl;
+        cout<<"The average age of player in "<<namaNegara<<" is "<<average<<" years old "<<endl;
 
     }
 }
@@ -71,28 +71,39 @@ void avrAge(listNegara LN, string namaNegara){
 
 
 void mainMenu(){
-    cout<<"\n=================== MAIN MENU ==================="<<endl;
-    cout<<"1. Insert Data"<<endl;
-    cout<<"2. Show List"<<endl;
-    cout<<"3. Find Average Age"<<endl;
-    cout<<"4. Delete..."<<endl;
+    cout<<"\n============= WORLD CUP MAIN MENU =============="<<endl;
+    cout<<"1. Insert Country"<<endl;
+    cout<<"2. Insert Player"<<endl;
+    cout<<"3. Show List"<<endl;
+    cout<<"4. Find Average Age of the Player"<<endl;
+    cout<<"5. Remove a Country"<<endl;
+    cout<<"6. Remove Players"<<endl;
     cout<<"0. Exit Menu"<<endl;
     cout<<"================================================="<<endl;
 }
 
 void menuInsert(){
     cout<<"\n================== INSERT MENU =================="<<endl;
-    cout<<"1. Insert Negara"<<endl;
-    cout<<"2. Insert Pemain"<<endl;
+    cout<<"1. Insert Country"<<endl;
+    cout<<"2. Insert Player"<<endl;
     cout<<"0. Return to Main Menu"<<endl;
     cout<<"================================================="<<endl;
 }
 
 void menuShow(){
     cout<<"\n=================== SHOW MENU ==================="<<endl;
-    cout<<"1. Show Negara"<<endl;
-    cout<<"2. Show Info Pemain"<<endl;
+    cout<<"1. Show List of Country"<<endl;
+    cout<<"2. Show the Player Information"<<endl;
     cout<<"3. Show the Youngest and Oldest Player"<<endl;
     cout<<"0. Return to Main Menu"<<endl;
     cout<<"================================================="<<endl;
 }
+
+void menuDelete(){
+    cout<<"\n================== DELETE MENU =================="<<endl;
+    cout<<"1. Delete the first country from the list"<<endl;
+    cout<<"0. Return to Main Menu"<<endl;
+    cout<<"================================================="<<endl;
+}
+
+

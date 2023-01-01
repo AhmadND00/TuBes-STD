@@ -13,28 +13,19 @@ int main(){
     //Create Empty List Negara
     createListNegara(LN);
     mainMenu();
-    cout<<"Pilih no: ";
+    cout<<"Choice: ";
     cin>>choice;
     while (choice != 0){
         switch(choice){
         case 1:
-            menuInsert();
-            cout<<"Pilih no: ";
-            cin>>choice;
-            while (choice != 0){
-                if (choice == 1){
-                    inputNegara(LN, pNegara, xN);
-                } else if (choice == 2){
-                    inputPemain(LN, pPemain, xP, 11);
-                }
-                menuInsert();
-                cout<<"Pilih no: ";
-                cin>>choice;
-            }
+            inputNegara(LN, pNegara, xN);
             break;
         case 2:
+            inputPemain(LN, pPemain, xP, 11);
+            break;
+        case 3:
             menuShow();
-            cout<<"Pilih no: ";
+            cout<<"Choice: ";
             cin>>choice;
             while (choice != 0){
                 if (choice == 1){
@@ -45,33 +36,38 @@ int main(){
                     youngestOldestPlayer(LN);
                 }
                 menuShow();
-                cout<<"Pilih no: ";
+                cout<<"Choice: ";
                 cin>>choice;
             }
             break;
-        case 3:
-            cout<<"Input negara yang dicari: ";
+        case 4:
+            cout<<"Input country: ";
             cin>>namaNegara;
             while (namaNegara != "0"){
                 avrAge(LN, namaNegara);
-                cout<<"\nInput negara yang dicari: ";
+                cout<<"\nInput country: ";
                 cin>>namaNegara;
             }
             break;
-        case 4:
-            cout<<"Fungsi belum dibuat\n";
+        case 5:
+            deleteFirstNegara(LN, pNegara);
+            cout<<info(pNegara).namaNegara<<" has been removed from the list"<<endl;
+            break;
+        case 6:
+            cout<<"Input country: ";
+            cin>>namaNegara;
+            deletePemain(LN, namaNegara);
+            cout<<"The player data from "<<namaNegara<<" has been deleted"<<endl;
             break;
         default:
-            cout<<"Pastikan pilihan menu sudah sesuai dengan list\n";
+            cout<<"Make sure you're inputing the correct menu option\n";
             break;
         }
         mainMenu();
-        cout << "Pilih no: ";
+        cout << "Choice: ";
         cin >> choice;
     }
-    cout<<"Anda keluar dari menu."<<endl;
-
-
+    cout<<"You have exited the main menu."<<endl;
 
     return 0;
 }

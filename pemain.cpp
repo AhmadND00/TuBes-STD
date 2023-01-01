@@ -69,14 +69,23 @@ void insertPemain(listNegara &LN, adrPemain P, string namaNegara){
     }
 }
 
+void deletePemain(listNegara &LN, string namaNegara){
+    adrNegara P = findNegara(LN, namaNegara);
+    if (P != NULL){
+        nextChild(P) = NULL;
+    } else {
+        cout<<"Country is not found in the list.";
+    }
+}
+
 
 void inputPemain(listNegara &LN, adrPemain Q, infotypePemain xP, int N){
     string negara;
-    cout<<"Negara dari Pemain adalah? ";
+    cout<<"Where is the player from? ";
     cin>>negara;
     while (negara != "0"){
         if (findNegara(LN, negara) == NULL){
-            cout<<"Negara tidak terdapat dalam list."<<endl<<endl;
+            cout<<"No country in the list."<<endl<<endl;
         } else {
             for (int i = 1; i <= N; i++){
                 cout<<"Input No Pemain: ";
@@ -95,26 +104,26 @@ void inputPemain(listNegara &LN, adrPemain Q, infotypePemain xP, int N){
                 Q = newPemain(xP);
                 insertPemain(LN, Q, negara);
             }
-            cout<<"Input pemain berhasil!"<<endl<<endl;
+            cout<<"Input player is successful!"<<endl<<endl;
         }
 
-        cout<<"Negara dari Pemain adalah? ";
+        cout<<"Where is the player from? ";
         cin>>negara;
     }
 }
 
 void printListPemain(listNegara LN){
     if (first(LN) == NULL){
-        cout<<"List Pemain Kosong!"<<endl<<endl;
+        cout<<"Player list is empty!"<<endl<<endl;
     } else {
         adrNegara P = first(LN);
-        cout<<"========================== List Pemain =========================="<<endl;
+        cout<<"========================== Player List =========================="<<endl;
         while (P != NULL){
             cout<<info(P).namaNegara<<endl;
             if (nextChild(P) == NULL){
-                cout << "Tidak ada pemain."<<endl;
+                cout << "There is no player in this country."<<endl;
             } else {
-                cout<<"No\tPosisi\tNama Pemain\t\tKlub\t\t    Umur   Goal"<<endl;
+                cout<<"No\tNo\tPlayer Name\t\tClub\t\t    Age   Goal"<<endl;
                 adrPemain Q = nextChild(P);
                 while (Q != NULL){
                     cout<<setw(8)<<left<<info(Q).no<<setw(8)<<info(Q).posisi<<setw(24)<<info(Q).namaPemain<<setw(20)<<info(Q).klub<<setw(7)<<info(Q).umur<<setw(8)<<info(Q).totGoal<<endl;
